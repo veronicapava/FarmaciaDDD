@@ -12,8 +12,8 @@ public class Administrador extends Entity<AdministradorId> {
     private DatosPersonales datospersonales;
     private Estado estado;
 
-    public Administrador(AdministradorId entityId, DatosPersonales datospersonales) {
-        super(entityId);
+    public Administrador(AdministradorId adminId, DatosPersonales datospersonales) {
+        super(adminId);
         this.datospersonales = datospersonales;
         this.estado = new Estado(Estado.Fase.SIN_TAREAS_POR_ASIGNAR);
     }

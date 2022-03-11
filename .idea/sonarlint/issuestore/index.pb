@@ -48,9 +48,3 @@ s
 Csrc/main/java/com/sofka/farmacia/almacenamiento/Almacenamiento.java,2\7\2763581c8529d7d360866c134c89f9997924fcf4
 x
 Hsrc/main/java/com/sofka/farmacia/personal/values/AuxiliarFarmaciaId.java,3\9\3992e74f57df8b419ee844f1c52303a64c3fbecf
-u
-Esrc/main/java/com/sofka/farmacia/personal/eventos/PersonalCreado.java,e\6\e659ade7aabf7cd92a7fa84852d8e31752de1b15
-v
-Fsrc/main/java/com/sofka/farmacia/personal/eventos/PersonalEditado.java,0\e\0e7b9b9ff658c5395df8fa73118a02e8d8ca620e
-x
-Hsrc/main/java/com/sofka/farmacia/personal/eventos/PersonalEliminado.java,3\5\351038bc9f11ab837b17a265965fb396a2f2c4e4

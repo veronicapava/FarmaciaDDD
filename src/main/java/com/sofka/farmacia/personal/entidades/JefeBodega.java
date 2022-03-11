@@ -12,8 +12,8 @@ public class JefeBodega extends Entity<JefeBodegaId> {
     private DatosPersonales datosPersonales;
     private Estado estado;
 
-    public JefeBodega(JefeBodegaId entityId, DatosPersonales datosPersonales) {
-        super(entityId);
+    public JefeBodega(JefeBodegaId jefeBodId, DatosPersonales datosPersonales) {
+        super(jefeBodId);
         this.datosPersonales = datosPersonales;
         this.estado = new Estado(Estado.Fase.NO_REALIZA_INVENTARIO);
     }

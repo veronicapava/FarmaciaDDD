@@ -12,8 +12,8 @@ public class AuxiliarFarmacia extends Entity<AuxiliarFarmaciaId> {
     private Estado estado;
 
 
-    public AuxiliarFarmacia(AuxiliarFarmaciaId entityId, DatosPersonales datosPersonales) {
-        super(entityId);
+    public AuxiliarFarmacia(AuxiliarFarmaciaId auxiFarmId, DatosPersonales datosPersonales) {
+        super(auxiFarmId);
         this.datosPersonales = datosPersonales;
         this.estado = new Estado(Estado.Fase.NO_RECIBIDO);
     }
