@@ -3,7 +3,7 @@ package com.sofka.farmacia.personal;
 import co.com.sofka.domain.generic.EventChange;
 import com.sofka.farmacia.personal.eventos.PersonalCreado;
 import com.sofka.farmacia.personal.eventos.PersonalEditado;
-import com.sofka.farmacia.personal.eventos.PersonalEliminado;
+import com.sofka.farmacia.personal.eventos.PersonalHabilitado;
 
 public class PersonalChange extends EventChange {
     public PersonalChange(Personal personal){
@@ -14,14 +14,11 @@ public class PersonalChange extends EventChange {
         });
 
         apply((PersonalEditado event) -> {
-            personal.auxiliarFarmacia = null;
-            personal.jefeBodega = null;
-            personal.administrador = null;
             personal.editarPersonal(event.getPersonalId());
         });
 
-        apply((PersonalEliminado event) -> {
-            personal.eliminarPersonal(event.getPersonalId());
+        apply((PersonalHabilitado event) -> {
+            personal.habilitarPersonal(event.getPersonalId());
         });
 
     }

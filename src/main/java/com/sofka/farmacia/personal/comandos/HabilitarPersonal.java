@@ -3,10 +3,10 @@ package com.sofka.farmacia.personal.comandos;
 import co.com.sofka.domain.generic.Command;
 import com.sofka.farmacia.personal.values.PersonalId;
 
-public class EliminarPersonal extends Command {
+public class HabilitarPersonal extends Command {
     private PersonalId personalId;
 
-    public EliminarPersonal(PersonalId personalId) {
+    public HabilitarPersonal(PersonalId personalId) {
         this.personalId = personalId;
     }
 

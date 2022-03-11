@@ -6,7 +6,7 @@ import com.sofka.farmacia.personal.entidades.AuxiliarFarmacia;
 import com.sofka.farmacia.personal.entidades.JefeBodega;
 import com.sofka.farmacia.personal.eventos.PersonalCreado;
 import com.sofka.farmacia.personal.eventos.PersonalEditado;
-import com.sofka.farmacia.personal.eventos.PersonalEliminado;
+import com.sofka.farmacia.personal.eventos.PersonalHabilitado;
 import com.sofka.farmacia.personal.values.*;
 
 import java.util.Objects;
@@ -17,6 +17,7 @@ public class Personal extends AggregateEvent<PersonalId> {
     protected JefeBodega jefeBodega;
     protected AuxiliarFarmacia auxiliarFarmacia;
     protected DatosPersonales datosPersonales;
+    protected PersonalId personalId;
 
     public Personal(PersonalId personalId, DatosPersonales datosPersonales) {
         super(personalId);
@@ -37,9 +38,9 @@ public class Personal extends AggregateEvent<PersonalId> {
         appendChange(new PersonalCreado(datosPersonales, personalId)).apply();
     }
 
-    public void eliminarPersonal(PersonalId personalId){
+    public void habilitarPersonal(PersonalId personalId){
         Objects.requireNonNull(personalId);
-        appendChange(new PersonalEliminado(personalId)).apply();
+        appendChange(new PersonalHabilitado(personalId)).apply();
     }
 
     public void editarPersonal(PersonalId personalId){
