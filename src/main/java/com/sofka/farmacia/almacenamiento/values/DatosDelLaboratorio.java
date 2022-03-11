@@ -1,4 +1,10 @@
 package com.sofka.farmacia.almacenamiento.values;
 
-public class DatosDelLaboratorio {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class DatosDelLaboratorio implements ValueObject<String> {
+    @Override
+    public String value() {
+        return "";
+    }
 }

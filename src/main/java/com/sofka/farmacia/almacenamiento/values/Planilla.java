@@ -1,4 +1,53 @@
 package com.sofka.farmacia.almacenamiento.values;
 
-public class Planilla {
+import co.com.sofka.domain.generic.ValueObject;
+
+import java.util.Date;
+
+public class Planilla implements ValueObject<Planilla.Props> {
+
+    private final String nombreDeQuienRetira;
+    private final Date fechaDeRetiro;
+    private final String nombreDeCadaMedicamentoRetirado;
+    private final double cantidadDeCadaMedicamentoRetirado;
+
+    public Planilla(String nombreDeQuienRetira, Date fechaDeRetiro, String nombreDeCadaMedicamentoRetirado, double cantidadDeCadaMedicamentoRetirado) {
+        //TODO: validaciones
+        this.nombreDeQuienRetira = nombreDeQuienRetira;
+        this.fechaDeRetiro = fechaDeRetiro;
+        this.nombreDeCadaMedicamentoRetirado = nombreDeCadaMedicamentoRetirado;
+        this.cantidadDeCadaMedicamentoRetirado = cantidadDeCadaMedicamentoRetirado;
+    }
+    
+    @Override
+    public Props value() {
+        return new Props() {
+            @Override
+            public String nombreDeQuienRetira() {
+                return nombreDeQuienRetira;
+            }
+
+            @Override
+            public String nombreDeCadaMedicamentoRetirado() {
+                return nombreDeCadaMedicamentoRetirado;
+            }
+
+            @Override
+            public double cantidadDeCadaMedicamentoRetirado() {
+                return cantidadDeCadaMedicamentoRetirado;
+            }
+
+            @Override
+            public Date fechaDeRetiro() {
+                return fechaDeRetiro;
+            }
+        };
+    }
+
+    public interface Props{
+        String nombreDeQuienRetira();
+        String nombreDeCadaMedicamentoRetirado();
+        double cantidadDeCadaMedicamentoRetirado();
+        Date fechaDeRetiro();
+    }
 }
