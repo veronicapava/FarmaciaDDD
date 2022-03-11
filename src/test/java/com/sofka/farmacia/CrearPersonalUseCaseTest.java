@@ -6,11 +6,9 @@ import com.sofka.farmacia.personal.comandos.CrearPersonal;
 import com.sofka.farmacia.personal.eventos.PersonalCreado;
 import com.sofka.farmacia.personal.values.DatosPersonales;
 import com.sofka.farmacia.personal.values.PersonalId;
-import com.sofka.farmacia.usecases.CrearPersonalUseCase;
+import com.sofka.farmacia.personal.usecases.CrearPersonalUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CrearPersonalUseCaseTest {
 

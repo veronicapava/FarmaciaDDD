@@ -1,4 +1,4 @@
-package com.sofka.farmacia.usecases;
+package com.sofka.farmacia.personal.usecases;
 
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
