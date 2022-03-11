@@ -8,7 +8,7 @@ public class PersonalEditado extends DomainEvent {
     private DatosPersonales datosPersonales;
     private PersonalId personalId;
 
-    public PersonalEditado(PersonalId personalId, DatosPersonales datosPersonales) {
+    public PersonalEditado(PersonalId personalId) {
         super("sofka.farmacia.personaleditado");
     }
 

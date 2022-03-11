@@ -16,6 +16,7 @@ public class Personal extends AggregateEvent<PersonalId> {
     protected Administrador administrador;
     protected JefeBodega jefeBodega;
     protected AuxiliarFarmacia auxiliarFarmacia;
+    protected DatosPersonales datosPersonales;
 
     public Personal(PersonalId personalId, DatosPersonales datosPersonales) {
         super(personalId);
