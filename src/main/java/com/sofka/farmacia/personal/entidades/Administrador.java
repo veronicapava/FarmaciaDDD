@@ -3,19 +3,19 @@ package com.sofka.farmacia.personal.entidades;
 import co.com.sofka.domain.generic.Entity;
 import com.sofka.farmacia.personal.values.AdministradorId;
 import com.sofka.farmacia.personal.values.DatosPersonales;
-import com.sofka.farmacia.personal.values.PersonalACargo;
+import com.sofka.farmacia.personal.values.Estado;
 
 import java.util.Objects;
 
 public class Administrador extends Entity<AdministradorId> {
 
     private DatosPersonales datospersonales;
-    private PersonalACargo personalACargo;
+    private Estado estado;
 
-    public Administrador(AdministradorId entityId, DatosPersonales datospersonales, PersonalACargo personalACargo) {
+    public Administrador(AdministradorId entityId, DatosPersonales datospersonales) {
         super(entityId);
         this.datospersonales = datospersonales;
-        this.personalACargo = personalACargo;
+        this.estado = new Estado(Estado.Fase.SIN_TAREAS_POR_ASIGNAR);
     }
 
     //comportamientos
@@ -24,19 +24,14 @@ public class Administrador extends Entity<AdministradorId> {
         this.datospersonales = Objects.requireNonNull(datosPersonales);
     }
 
-    public void delegarTareasDePersonalEnGeneral(PersonalACargo personalACargo){
-        this.personalACargo = personalACargo;
+    public void delegarTareasDePersonalEnGeneral(){
+        this.estado = new Estado(Estado.Fase.DELEGAR_TAREA);
     }
 
 
-    //getters
+    //Propiedades
 
     public DatosPersonales datospersonales() {
         return datospersonales;
     }
-
-    public PersonalACargo personalACargo() {
-        return personalACargo;
-    }
-
 }

@@ -12,8 +12,6 @@ l
 <src/main/java/com/sofka/farmacia/recepcion/values/Datos.java,b\b\bb737b07d48be005c84d351b34210157812e85dc
 
 Osrc/main/java/com/sofka/farmacia/almacenamiento/values/DatosDelLaboratorio.java,2\f\2f44186bc0a82aca1a869d8d85a677267fff7551
-u
-Esrc/main/java/com/sofka/farmacia/personal/values/DatosPersonales.java,6\e\6e48e66fcbf0decfdcc4dc54284445d434775b6b
 ~
 Nsrc/main/java/com/sofka/farmacia/almacenamiento/entidades/DespachoAVentas.java,4\a\4adb84bfe8f813bcac1c5063524a75cdafacd74a
 p
@@ -22,8 +20,6 @@ m
 =src/main/java/com/sofka/farmacia/recepcion/values/Estado.java,4\b\4b9894481bb48c57b212a161734942f20da43194
 s
 Csrc/main/java/com/sofka/farmacia/almacenamiento/values/Estante.java,d\a\da3aed4809f3bbfb6b51c739495cb971c8fe08d8
-t
-Dsrc/main/java/com/sofka/farmacia/recepcion/values/FechaRecibido.java,f\f\ff5b821d8158ac06176e0b91827629d9d60d6aa7
 u
 Esrc/main/java/com/sofka/farmacia/recepcion/entidades/Inventarios.java,c\2\c252dae6459ffedd98641c865b982bd53a5aad82
 r
@@ -48,9 +44,13 @@ i
 9src/main/java/com/sofka/farmacia/recepcion/Recepcion.java,f\c\fcf14abbe44f6c5c45af729ebf5733f1bc2130b6
 r
 Bsrc/main/java/com/sofka/farmacia/recepcion/values/RecepcionId.java,4\3\431b79f74aa1a036cc019eb7652fb9f52c915ee3
-u
-Esrc/main/java/com/sofka/farmacia/personal/values/AdministradorId.java,0\8\08edc89a774839f82a6b1aa37aad543050a1bd9a
 s
 Csrc/main/java/com/sofka/farmacia/almacenamiento/Almacenamiento.java,2\7\2763581c8529d7d360866c134c89f9997924fcf4
 x
 Hsrc/main/java/com/sofka/farmacia/personal/values/AuxiliarFarmaciaId.java,3\9\3992e74f57df8b419ee844f1c52303a64c3fbecf
+u
+Esrc/main/java/com/sofka/farmacia/personal/eventos/PersonalCreado.java,e\6\e659ade7aabf7cd92a7fa84852d8e31752de1b15
+v
+Fsrc/main/java/com/sofka/farmacia/personal/eventos/PersonalEditado.java,0\e\0e7b9b9ff658c5395df8fa73118a02e8d8ca620e
+x
+Hsrc/main/java/com/sofka/farmacia/personal/eventos/PersonalEliminado.java,3\5\351038bc9f11ab837b17a265965fb396a2f2c4e4
