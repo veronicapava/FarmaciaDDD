@@ -1,2 +1,23 @@
-package com.sofka.farmacia.almacenamiento.comandos;public class GenerarListaDeLabs {
+package com.sofka.farmacia.almacenamiento.comandos;
+
+import co.com.sofka.domain.generic.Command;
+import com.sofka.farmacia.almacenamiento.values.DatosDelLaboratorio;
+import com.sofka.farmacia.almacenamiento.values.Estante;
+
+public class GenerarListaDeLabs extends Command {
+    private DatosDelLaboratorio datosDelLaboratorio;
+    private Estante estante;
+
+    public GenerarListaDeLabs(DatosDelLaboratorio datosDelLaboratorio, Estante estante) {
+        this.datosDelLaboratorio = datosDelLaboratorio;
+        this.estante = estante;
+    }
+
+    public DatosDelLaboratorio getDatosDelLaboratorio() {
+        return datosDelLaboratorio;
+    }
+
+    public Estante getEstante() {
+        return estante;
+    }
 }
