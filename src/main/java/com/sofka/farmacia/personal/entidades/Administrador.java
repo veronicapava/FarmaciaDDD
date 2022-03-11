@@ -34,4 +34,8 @@ public class Administrador extends Entity<AdministradorId> {
     public DatosPersonales datospersonales() {
         return datospersonales;
     }
+
+    public Estado estado() {
+        return estado;
+    }
 }

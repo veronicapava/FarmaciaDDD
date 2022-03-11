@@ -18,4 +18,6 @@ public class Personal extends AggregateEvent<PersonalId> {
         super(entityId);
         appendChange(new PersonalCreado(datosPersonales)).apply(); //Cuando el caso de uso vaya a crear el agreghador, se le pasara el id y se le pasaran los datos personales, la consecuencia es que el personal fue creado
     }
+
+
 }

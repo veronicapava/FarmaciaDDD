@@ -36,4 +36,8 @@ public class JefeBodega extends Entity<JefeBodegaId> {
     public DatosPersonales datosPersonales() {
         return datosPersonales;
     }
+
+    public Estado estado() {
+        return estado;
+    }
 }
