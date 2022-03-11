@@ -1,23 +1,19 @@
 package com.sofka.farmacia.almacenamiento.comandos;
 
 import co.com.sofka.domain.generic.Command;
+import com.sofka.farmacia.almacenamiento.values.AlmacenamientoId;
 import com.sofka.farmacia.almacenamiento.values.DatosDelLaboratorio;
 import com.sofka.farmacia.almacenamiento.values.Estante;
-import com.sofka.farmacia.almacenamiento.values.LaboratorioId;
 
 public class AlmacenarPorLaboratorio extends Command {
-    private LaboratorioId laboratorioId;
+    private AlmacenamientoId almacenamientoId;
     private DatosDelLaboratorio datosDelLaboratorio;
     private Estante estante;
 
-    public AlmacenarPorLaboratorio(LaboratorioId laboratorioId, DatosDelLaboratorio datosDelLaboratorio, Estante estante) {
-        this.laboratorioId = laboratorioId;
+    public AlmacenarPorLaboratorio(AlmacenamientoId almacenamientoId, DatosDelLaboratorio datosDelLaboratorio, Estante estante) {
+        this.almacenamientoId = almacenamientoId;
         this.datosDelLaboratorio = datosDelLaboratorio;
         this.estante = estante;
-    }
-
-    public LaboratorioId getLaboratorioId() {
-        return laboratorioId;
     }
 
     public DatosDelLaboratorio getDatosDelLaboratorio() {
@@ -26,5 +22,9 @@ public class AlmacenarPorLaboratorio extends Command {
 
     public Estante getEstante() {
         return estante;
+    }
+
+    public AlmacenamientoId getAlmacenamientoId() {
+        return almacenamientoId;
     }
 }

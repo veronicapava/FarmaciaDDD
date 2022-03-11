@@ -7,6 +7,7 @@ import com.sofka.farmacia.almacenamiento.values.LaboratorioId;
 
 public class Laboratorio extends Entity<LaboratorioId> {
 
+    private LaboratorioId laboratorioId;
     private DatosDelLaboratorio datosDelLaboratorio;
     private Estante estante;
 
@@ -18,7 +19,8 @@ public class Laboratorio extends Entity<LaboratorioId> {
 
     //Comportamientos
 
-    public void clasificarPorLaboratorio(DatosDelLaboratorio datosDelLaboratorio, Estante estante ){
+    public void clasificarPorLaboratorio(LaboratorioId laboratorioId, DatosDelLaboratorio datosDelLaboratorio, Estante estante ){
+        this.laboratorioId = laboratorioId;
         this.datosDelLaboratorio = datosDelLaboratorio;
         this.estante = estante;
     }
@@ -37,5 +39,9 @@ public class Laboratorio extends Entity<LaboratorioId> {
 
     public Estante estante() {
         return estante;
+    }
+
+    public LaboratorioId laboratorioId() {
+        return laboratorioId;
     }
 }
