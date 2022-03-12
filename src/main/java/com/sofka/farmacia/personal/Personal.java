@@ -25,7 +25,7 @@ public class Personal extends AggregateEvent<PersonalId> {
     }
 
    //Constructor privado para afectar los estados
-    private Personal(PersonalId personalId){
+   public Personal(PersonalId personalId){
         super(personalId);
         subscribe(new PersonalChange(this)); //Cada vez que se ejecuta un comportamiento, se va a lanzar un evento, pero este evento va a tener un suscriptor que va a estar pendiente de el evento como tal, para poder cambiar los estados del agregado
     }
@@ -43,8 +43,8 @@ public class Personal extends AggregateEvent<PersonalId> {
         appendChange(new PersonalHabilitado(personalId)).apply();
     }
 
-    public void editarPersonal(PersonalId personalId){
-        appendChange(new PersonalEditado(personalId)).apply();
+    public void editarPersonal(PersonalId personalId, DatosPersonales datosPersonales){
+        appendChange(new PersonalEditado(personalId, datosPersonales)).apply();
     }
 
 }

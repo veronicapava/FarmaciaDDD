@@ -14,7 +14,7 @@ public class PersonalChange extends EventChange {
         });
 
         apply((PersonalEditado event) -> {
-            personal.editarPersonal(event.getPersonalId());
+            personal.editarPersonal(event.getPersonalId(), event.getDatosPersonales());
         });
 
         apply((PersonalHabilitado event) -> {
