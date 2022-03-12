@@ -7,8 +7,9 @@ public class PersonalHabilitado extends DomainEvent {
 
     private PersonalId personalId;
 
-    public PersonalHabilitado(PersonalId PersonalId) {
+    public PersonalHabilitado(PersonalId personalId) {
         super("sofka.farmacia.personalhabilitado");
+        this.personalId = personalId;
     }
 
     public PersonalId getPersonalId() {

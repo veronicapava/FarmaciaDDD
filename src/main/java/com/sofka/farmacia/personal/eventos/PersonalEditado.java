@@ -10,6 +10,8 @@ public class PersonalEditado extends DomainEvent {
 
     public PersonalEditado(PersonalId personalId, DatosPersonales datosPersonales) {
         super("sofka.farmacia.personaleditado");
+        this.personalId = personalId;
+        this.datosPersonales = datosPersonales;
     }
 
     public DatosPersonales getDatosPersonales() {

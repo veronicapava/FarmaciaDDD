@@ -19,6 +19,7 @@ public class PersonalChange extends EventChange {
 
         apply((PersonalHabilitado event) -> {
             personal.habilitarPersonal(event.getPersonalId());
+            new PersonalHabilitado(event.getPersonalId());
         });
 
     }
