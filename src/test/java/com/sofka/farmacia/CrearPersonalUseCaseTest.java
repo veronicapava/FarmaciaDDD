@@ -16,7 +16,7 @@ class CrearPersonalUseCaseTest {
     void crearPersonal(){
         //arrange: Inicializacion de objetos y asignacion de variables
         PersonalId personalId = new PersonalId();
-        DatosPersonales datosPersonales = new DatosPersonales();
+        DatosPersonales datosPersonales = new DatosPersonales("Veronica", "Pava");
         var command = new CrearPersonal(personalId, datosPersonales);
         var usecase = new CrearPersonalUseCase();
         //act: invocacion del metodo a probar con los valores previamente inicializados

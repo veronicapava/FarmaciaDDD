@@ -19,8 +19,8 @@ public class AlmacenarPorLaboratorioUseCaseTest {
         //arrange
         AlmacenamientoId almacenamientoId = new AlmacenamientoId();
         LaboratorioId laboratorioId = new LaboratorioId();
-        DatosDelLaboratorio datosDelLaboratorio = new DatosDelLaboratorio();
-        Estante estante = new Estante();
+        DatosDelLaboratorio datosDelLaboratorio = new DatosDelLaboratorio("Genfar");
+        Estante estante = new Estante(1);
 
         var command = new AlmacenarPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante);
         var usecase= new AlmacenarPorLaboratorioUseCase();
