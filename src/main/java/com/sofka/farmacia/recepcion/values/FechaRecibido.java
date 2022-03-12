@@ -2,11 +2,19 @@ package com.sofka.farmacia.recepcion.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class FechaRecibido implements ValueObject<Date> {
-    @Override
-    public Date value() {
-        return null;
+public class FechaRecibido implements ValueObject<LocalDate> {
+
+    private final LocalDate fechaRecibido;
+
+    public FechaRecibido(LocalDate fechaRecibido) {
+        this.fechaRecibido = fechaRecibido;
     }
+
+    @Override
+    public LocalDate value() {
+        return fechaRecibido;
+    }
+
 }
