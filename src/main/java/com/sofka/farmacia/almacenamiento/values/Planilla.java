@@ -3,6 +3,7 @@ package com.sofka.farmacia.almacenamiento.values;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Planilla implements ValueObject<Planilla.Props> {
 
@@ -12,7 +13,10 @@ public class Planilla implements ValueObject<Planilla.Props> {
     private final double cantidadDeCadaMedicamentoRetirado;
 
     public Planilla(String nombreDeQuienRetira, Date fechaDeRetiro, String nombreDeCadaMedicamentoRetirado, double cantidadDeCadaMedicamentoRetirado) {
-        //TODO: validaciones
+        Objects.requireNonNull(nombreDeQuienRetira);
+        Objects.requireNonNull(fechaDeRetiro);
+        Objects.requireNonNull(nombreDeCadaMedicamentoRetirado);
+        Objects.requireNonNull(cantidadDeCadaMedicamentoRetirado);
         this.nombreDeQuienRetira = nombreDeQuienRetira;
         this.fechaDeRetiro = fechaDeRetiro;
         this.nombreDeCadaMedicamentoRetirado = nombreDeCadaMedicamentoRetirado;
