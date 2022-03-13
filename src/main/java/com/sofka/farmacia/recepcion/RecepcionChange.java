@@ -9,7 +9,7 @@ import com.sofka.farmacia.recepcion.eventos.PersonalSeleccionado;
 public class RecepcionChange extends EventChange {
     public RecepcionChange(Recepcion recepcion){
         apply((ContenidoVerificado event) ->{
-            recepcion.verificarContenido(event.getPedidoId(), event.getEstado());
+            recepcion.verificarContenido(event.getAlmacenamientoId(), event.getRecepcionId(), event.getPedidoId(), event.getEstado());
         });
 
         apply((PedidoAlmacenado event) -> {

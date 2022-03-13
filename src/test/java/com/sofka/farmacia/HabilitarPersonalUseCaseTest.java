@@ -25,7 +25,6 @@ class HabilitarPersonalUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
-        System.out.println(events);
         //assert
         var event =(PersonalHabilitado)events.get(0);
         Assertions.assertEquals("sofka.farmacia.personalhabilitado", event.type);

@@ -14,18 +14,18 @@ class CrearPersonalUseCaseTest {
 
     @Test
     void crearPersonal(){
-        //arrange: Inicializacion de objetos y asignacion de variables
+        //arrange
         PersonalId personalId = new PersonalId();
         DatosPersonales datosPersonales = new DatosPersonales("Veronica", "Pava");
         var command = new CrearPersonal(personalId, datosPersonales);
         var usecase = new CrearPersonalUseCase();
-        //act: invocacion del metodo a probar con los valores previamente inicializados
+        //act
         var events = UseCaseHandler.getInstance()
                 .syncExecutor(usecase, new RequestCommand<>(command))
                 .orElseThrow()
                 .getDomainEvents();
-        //assert: verifica si el valor obtenido por el metodo antes ejecutado es el esperado
-        var event = (PersonalCreado)events.get(0); //Eventos particulares
+        //assert
+        var event = (PersonalCreado)events.get(1);
         Assertions.assertEquals("sofka.farmacia.personalcreado", event.type);
         Assertions.assertEquals(personalId.value(),event.aggregateRootId());
     }

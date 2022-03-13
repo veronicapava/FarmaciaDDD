@@ -32,6 +32,7 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
         super(recepcionId);
         appendChange(new PedidoRecibido(recepcionId, almacenamientoId, pedidoId, estado)).apply();
         appendChange(new PedidoAlmacenado(almacenamientoId,recepcionId,pedidoId,estado)).apply();
+        appendChange(new ContenidoVerificado(recepcionId, almacenamientoId, pedidoId, estado));
     }
 
     public Recepcion(RecepcionId recepcionId, PersonalId personalId){
@@ -45,8 +46,8 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
         appendChange(new PedidoRecibido(recepcionId, almacenamientoId, pedidoid,estado)).apply();
     }
 
-    public void verificarContenido(PedidoId pedidoId, Estado estado){
-        appendChange(new ContenidoVerificado(pedidoId, estado)).apply();
+    public void verificarContenido(AlmacenamientoId almacenamientoId, RecepcionId recepcionId, PedidoId pedidoId, Estado estado){
+        appendChange(new ContenidoVerificado( recepcionId, almacenamientoId, pedidoId, estado)).apply();
     }
 
    public void almacenarPedido(AlmacenamientoId almacenamientoId,RecepcionId recepcionId, PedidoId pedidoId, Estado estado){

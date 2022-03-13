@@ -29,7 +29,7 @@ class EditarPersonalUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (PersonalEditado) events.get(1);
+        var event = (PersonalEditado) events.get(2);
         Assertions.assertEquals("sofka.farmacia.personaleditado", event.type);
         Assertions.assertEquals(personalId.value(), event.aggregateRootId());
         Assertions.assertEquals(personalId.value(), event.getPersonalId().value());

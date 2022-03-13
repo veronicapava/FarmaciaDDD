@@ -17,5 +17,6 @@ public class Estado implements ValueObject<Estado.Fase> {
 
     public enum Fase {
         REVISANDO_PEDIDO, RECHAZANDO_PEDIDO, SOLICITAR_PEDIDO, ALMACENANDO_PEDIDO
+
     }
 }
