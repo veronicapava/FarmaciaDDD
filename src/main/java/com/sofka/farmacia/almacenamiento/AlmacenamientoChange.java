@@ -16,7 +16,7 @@ public class AlmacenamientoChange extends EventChange {
         });
 
         apply((CuarentenaVerificada event) ->{
-            almacenamiento.cuarentena = null;
+            almacenamiento.verificarCuarentena(event.getAlmacenamientoId(), event.getDatosDelLaboratorio(), event.getEstante(), event.getClasificacion(), event.getMedicamento());
         });
 
         apply((MedicamentosDespachados event ) -> {

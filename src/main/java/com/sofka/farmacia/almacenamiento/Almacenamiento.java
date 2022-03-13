@@ -5,9 +5,8 @@ import com.sofka.farmacia.almacenamiento.entidades.Cuarentena;
 import com.sofka.farmacia.almacenamiento.entidades.DespachoAVentas;
 import com.sofka.farmacia.almacenamiento.entidades.Laboratorio;
 import com.sofka.farmacia.almacenamiento.eventos.AlmacenadoPorLaboratorio;
-import com.sofka.farmacia.almacenamiento.values.AlmacenamientoId;
-import com.sofka.farmacia.almacenamiento.values.DatosDelLaboratorio;
-import com.sofka.farmacia.almacenamiento.values.Estante;
+import com.sofka.farmacia.almacenamiento.eventos.CuarentenaVerificada;
+import com.sofka.farmacia.almacenamiento.values.*;
 
 import java.util.List;
 
@@ -17,18 +16,24 @@ public class Almacenamiento extends AggregateEvent<AlmacenamientoId> {
     protected Cuarentena cuarentena;
     protected DespachoAVentas despachoAVentas;
     protected List<Laboratorio> laboratorio;
+    protected Medicamento medicamento;
+    protected Clasificacion clasificacion;
 
-    public Almacenamiento(AlmacenamientoId almacenamientoId, DatosDelLaboratorio datosDelLaboratorio, Estante estante) {
+    public Almacenamiento(AlmacenamientoId almacenamientoId, DatosDelLaboratorio datosDelLaboratorio, Estante estante, Medicamento medicamento, Clasificacion clasificacion) {
         super(almacenamientoId);
-        appendChange(new AlmacenadoPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante)).apply();
+        appendChange(new AlmacenadoPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante, medicamento, clasificacion)).apply();
+        appendChange(new CuarentenaVerificada(almacenamientoId, datosDelLaboratorio, estante, medicamento, clasificacion)).apply();
     }
 
     //Comportamientos
 
     public void almacenarPorLaboratorio(AlmacenamientoId almacenamientoId, DatosDelLaboratorio datosDelLaboratorio, Estante estante){
-        appendChange(new AlmacenadoPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante)).apply();
+        appendChange(new AlmacenadoPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante, medicamento, clasificacion)).apply();
     }
 
+    public void verificarCuarentena(AlmacenamientoId almacenamientoId, DatosDelLaboratorio datosDelLaboratorio, Estante estante, Clasificacion clasificacion, Medicamento medicamento){
+        appendChange(new CuarentenaVerificada(almacenamientoId, datosDelLaboratorio, estante, medicamento, clasificacion));
+    }
 
 
 }

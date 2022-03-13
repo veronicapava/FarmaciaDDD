@@ -5,10 +5,7 @@ import co.com.sofka.business.support.RequestCommand;
 import com.sofka.farmacia.almacenamiento.comandos.AlmacenarPorLaboratorio;
 import com.sofka.farmacia.almacenamiento.eventos.AlmacenadoPorLaboratorio;
 import com.sofka.farmacia.almacenamiento.usecases.AlmacenarPorLaboratorioUseCase;
-import com.sofka.farmacia.almacenamiento.values.AlmacenamientoId;
-import com.sofka.farmacia.almacenamiento.values.DatosDelLaboratorio;
-import com.sofka.farmacia.almacenamiento.values.Estante;
-import com.sofka.farmacia.almacenamiento.values.LaboratorioId;
+import com.sofka.farmacia.almacenamiento.values.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -21,8 +18,10 @@ public class AlmacenarPorLaboratorioUseCaseTest {
         LaboratorioId laboratorioId = new LaboratorioId();
         DatosDelLaboratorio datosDelLaboratorio = new DatosDelLaboratorio("Genfar");
         Estante estante = new Estante(1);
+        Medicamento medicamento = new Medicamento("naprox");
+        Clasificacion clasificacion = new Clasificacion(Clasificacion.Fase.VENCIDO);
 
-        var command = new AlmacenarPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante);
+        var command = new AlmacenarPorLaboratorio(almacenamientoId, datosDelLaboratorio, estante, medicamento, clasificacion);
         var usecase= new AlmacenarPorLaboratorioUseCase();
 
         //act
