@@ -27,9 +27,15 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
     private PedidoId pedidoId;
     private Estado estado;
 
+
     public Recepcion(RecepcionId recepcionId, PedidoId pedidoId, Estado estado) {
         super(recepcionId);
         appendChange(new PedidoRecibido(recepcionId,pedidoId, estado));
+    }
+
+    public Recepcion(RecepcionId recepcionId, PersonalId personalId){
+        super(recepcionId);
+        appendChange(new PersonalSeleccionado(personalId)).apply();
     }
 
     //Comportamientos
