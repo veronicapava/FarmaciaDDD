@@ -28,9 +28,10 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
     private Estado estado;
 
 
-    public Recepcion(RecepcionId recepcionId, PedidoId pedidoId, Estado estado) {
+    public Recepcion(RecepcionId recepcionId, AlmacenamientoId almacenamientoId, PedidoId pedidoId, Estado estado) {
         super(recepcionId);
-        appendChange(new PedidoRecibido(recepcionId,pedidoId, estado));
+        appendChange(new PedidoRecibido(recepcionId, almacenamientoId, pedidoId, estado)).apply();
+        appendChange(new PedidoAlmacenado(almacenamientoId,recepcionId,pedidoId,estado)).apply();
     }
 
     public Recepcion(RecepcionId recepcionId, PersonalId personalId){
@@ -41,16 +42,16 @@ public class Recepcion extends AggregateEvent<RecepcionId> {
     //Comportamientos
 
     public void recibirPedido(RecepcionId recepcionId, PedidoId pedidoid, Estado estado){
-        appendChange(new PedidoRecibido(recepcionId, pedidoid,estado)).apply();
+        appendChange(new PedidoRecibido(recepcionId, almacenamientoId, pedidoid,estado)).apply();
     }
 
     public void verificarContenido(PedidoId pedidoId, Estado estado){
         appendChange(new ContenidoVerificado(pedidoId, estado)).apply();
     }
 
-    public void almacenarPedido(AlmacenamientoId almacenamientoId, Estado estado){
+   public void almacenarPedido(AlmacenamientoId almacenamientoId,RecepcionId recepcionId, PedidoId pedidoId, Estado estado){
         Objects.requireNonNull(almacenamientoId);
-        appendChange(new PedidoAlmacenado(almacenamientoId, estado)).apply();
+        appendChange(new PedidoAlmacenado(almacenamientoId, recepcionId, pedidoId,estado)).apply();
     }
 
     public void seleccionarPersonal(PersonalId personalId){

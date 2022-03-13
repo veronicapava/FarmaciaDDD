@@ -13,7 +13,7 @@ public class RecepcionChange extends EventChange {
         });
 
         apply((PedidoAlmacenado event) -> {
-            recepcion.almacenarPedido(event.getAlmacenamientoId(), event.getEstado());
+            recepcion.almacenarPedido(event.getAlmacenamientoId(), event.getRecepcionId(), event.getPedidoId(),event.getEstado());
         });
 
         apply((PedidoRecibido event) ->{

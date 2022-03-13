@@ -2,6 +2,7 @@ package com.sofka.farmacia;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
+import com.sofka.farmacia.almacenamiento.values.AlmacenamientoId;
 import com.sofka.farmacia.recepcion.comandos.RecibirPedido;
 import com.sofka.farmacia.recepcion.eventos.PedidoRecibido;
 import com.sofka.farmacia.recepcion.usecases.RecibirPedidoUseCase;
@@ -21,8 +22,9 @@ class RecibirPedidoUseCaseTest {
         PedidoId pedidoId = PedidoId.of("xxxx");
         ProovedorId proovedorId = new ProovedorId();
         Estado estado = new Estado(Estado.Fase.REVISANDO_PEDIDO);
+        AlmacenamientoId almacenamientoId = new AlmacenamientoId();
 
-        var command = new RecibirPedido(pedidoId, recepcionId, estado);
+        var command = new RecibirPedido(pedidoId, almacenamientoId, recepcionId, estado);
         var usecase = new RecibirPedidoUseCase();
 
         //act

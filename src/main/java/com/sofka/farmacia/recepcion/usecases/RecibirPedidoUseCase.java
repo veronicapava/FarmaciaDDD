@@ -10,7 +10,7 @@ public class RecibirPedidoUseCase extends UseCase<RequestCommand<RecibirPedido>,
     @Override
     public void executeUseCase(RequestCommand<RecibirPedido> input) {
         var command = input.getCommand();
-        var recepcion = new Recepcion(command.getRecepcionId(), command.getPedidoId(), command.getEstado());
+        var recepcion = new Recepcion(command.getRecepcionId(), command.getAlmacenamientoId(), command.getPedidoId(), command.getEstado());
         emit().onResponse(new ResponseEvents(recepcion.getUncommittedChanges()));
     }
 }

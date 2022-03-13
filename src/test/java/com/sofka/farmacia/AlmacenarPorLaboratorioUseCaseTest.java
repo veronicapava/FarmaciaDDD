@@ -9,7 +9,7 @@ import com.sofka.farmacia.almacenamiento.values.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class AlmacenarPorLaboratorioUseCaseTest {
+ class AlmacenarPorLaboratorioUseCaseTest {
 
     @Test
     void almacenarPorLaboratorio(){
