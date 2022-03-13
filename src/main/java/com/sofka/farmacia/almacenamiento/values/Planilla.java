@@ -12,6 +12,7 @@ public class Planilla implements ValueObject<Planilla.Props> {
     private final String nombreDeCadaMedicamentoRetirado;
     private final double cantidadDeCadaMedicamentoRetirado;
 
+
     public Planilla(String nombreDeQuienRetira, Date fechaDeRetiro, String nombreDeCadaMedicamentoRetirado, double cantidadDeCadaMedicamentoRetirado) {
         Objects.requireNonNull(nombreDeQuienRetira);
         Objects.requireNonNull(fechaDeRetiro);
@@ -45,6 +46,7 @@ public class Planilla implements ValueObject<Planilla.Props> {
             public Date fechaDeRetiro() {
                 return fechaDeRetiro;
             }
+
         };
     }
 

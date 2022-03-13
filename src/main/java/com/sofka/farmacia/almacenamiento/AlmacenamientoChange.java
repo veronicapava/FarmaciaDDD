@@ -20,7 +20,7 @@ public class AlmacenamientoChange extends EventChange {
         });
 
         apply((MedicamentosDespachados event ) -> {
-            almacenamiento.despachoAVentas = null;
+            almacenamiento.despacharMedicamentos(event.getAlmacenamientoId(),event.getDespachoAVentaId(), event.getPlanilla());
         });
 
         apply((ListadeLabsGenerada event)->{
