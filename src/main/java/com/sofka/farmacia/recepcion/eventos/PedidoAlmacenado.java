@@ -8,10 +8,10 @@ import com.sofka.farmacia.recepcion.values.RecepcionId;
 
 public class PedidoAlmacenado extends DomainEvent {
 
-    private AlmacenamientoId almacenamientoId;
-    private PedidoId pedidoId;
-    private Estado estado;
-    private RecepcionId recepcionId;
+    private final AlmacenamientoId almacenamientoId;
+    private final PedidoId pedidoId;
+    private final Estado estado;
+    private final RecepcionId recepcionId;
 
     public PedidoAlmacenado(AlmacenamientoId almacenamientoId, RecepcionId recepcionId,PedidoId pedidoId,  Estado estado) {
         super("sofka.farmacia.pedidoalmacenado");
